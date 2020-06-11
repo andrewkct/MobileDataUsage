@@ -54,7 +54,6 @@ extension HomeViewController: UITableViewDelegate {
         if let vc = storyboard?.instantiateViewController(withIdentifier: String(describing: DetailViewController.self)) as? DetailViewController {
             
             vc.modalPresentationStyle = .overCurrentContext
-            vc.modalTransitionStyle = .crossDissolve
             present(vc, animated: true, completion: nil)
         }
     }

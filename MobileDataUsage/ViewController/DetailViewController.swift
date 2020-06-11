@@ -9,9 +9,11 @@
 import UIKit
 
 class DetailViewController: UIViewController {
+    @IBOutlet private weak var bgView: UIView!
     @IBOutlet private weak var containerView: UIView!
     @IBOutlet private weak var lblTitle: UILabel!
     @IBOutlet private weak var tblDetail: UITableView!
+    
     @IBOutlet private weak var tblDetailHeightConstraint: NSLayoutConstraint!
     
     private let detailTableViewCellId = String(describing: DetailTableViewCell.self)
@@ -24,10 +26,25 @@ class DetailViewController: UIViewController {
         configureView()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        UIView.animate(withDuration: 0.3) {
+            self.bgView.alpha = 0.5
+        }
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        
+        bgView.alpha = 0
+    }
+    
     // MARK: - Configure View
     private func configureView() {
+        view.isOpaque = false
         view.backgroundColor = .clear
-        
+            
         containerView.layer.cornerRadius = 10.0
         
         tblDetail.backgroundColor = .clear

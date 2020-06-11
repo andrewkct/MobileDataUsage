@@ -123,6 +123,7 @@
                         <viewLayoutGuide key="safeArea" id="OjW-RB-q27"/>
                     </view>
                     <connections>
+                        <outlet property="bgView" destination="jPg-z0-t1z" id="tzt-UV-AdE"/>
                         <outlet property="containerView" destination="HKD-OL-Npt" id="rmb-w5-Pv7"/>
                         <outlet property="lblTitle" destination="Gex-4H-3TP" id="BgJ-D0-GLb"/>
                         <outlet property="tblDetail" destination="bGs-PL-S7C" id="Euz-SN-bfb"/>

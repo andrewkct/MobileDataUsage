@@ -20,8 +20,15 @@
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eut-GZ-eug">
                         <rect key="frame" x="25" y="0.0" width="270" height="83"/>
                         <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_warning" translatesAutoresizingMaskIntoConstraints="NO" id="Jcz-2D-7Io">
+                                <rect key="frame" x="10" y="17.5" width="25" height="25"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="25" id="VLH-Ux-fEM"/>
+                                    <constraint firstAttribute="width" secondItem="Jcz-2D-7Io" secondAttribute="height" id="xgh-kv-nP2"/>
+                                </constraints>
+                            </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QCO-mG-6VI">
-                                <rect key="frame" x="10" y="15" width="250" height="30"/>
+                                <rect key="frame" x="40" y="15" width="220" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -41,12 +48,14 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="QCO-mG-6VI" firstAttribute="leading" secondItem="Jcz-2D-7Io" secondAttribute="trailing" constant="5" id="0w0-Qw-TmD"/>
+                            <constraint firstAttribute="trailing" secondItem="QCO-mG-6VI" secondAttribute="trailing" constant="10" id="B5B-k1-7lF"/>
+                            <constraint firstItem="Jcz-2D-7Io" firstAttribute="leading" secondItem="eut-GZ-eug" secondAttribute="leading" constant="10" id="CaZ-qf-lCC"/>
                             <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="H6F-fa-jDJ" secondAttribute="trailing" constant="10" id="Dve-K1-rC7"/>
                             <constraint firstAttribute="bottom" secondItem="3qv-TP-OiB" secondAttribute="bottom" constant="15" id="Nsc-3V-WFv"/>
                             <constraint firstItem="3qv-TP-OiB" firstAttribute="top" secondItem="QCO-mG-6VI" secondAttribute="bottom" constant="5" id="Prl-VC-81n"/>
-                            <constraint firstAttribute="trailing" secondItem="QCO-mG-6VI" secondAttribute="trailing" constant="10" id="Qh8-cl-oZF"/>
                             <constraint firstItem="3qv-TP-OiB" firstAttribute="leading" secondItem="eut-GZ-eug" secondAttribute="leading" constant="10" id="Tku-Fv-yjB"/>
-                            <constraint firstItem="QCO-mG-6VI" firstAttribute="leading" secondItem="eut-GZ-eug" secondAttribute="leading" constant="10" id="cwG-fM-oZY"/>
+                            <constraint firstItem="Jcz-2D-7Io" firstAttribute="centerY" secondItem="QCO-mG-6VI" secondAttribute="centerY" id="d5V-k7-M0s"/>
                             <constraint firstItem="QCO-mG-6VI" firstAttribute="top" secondItem="eut-GZ-eug" secondAttribute="top" constant="15" id="izS-m4-wUL"/>
                             <constraint firstItem="H6F-fa-jDJ" firstAttribute="leading" secondItem="3qv-TP-OiB" secondAttribute="trailing" constant="5" id="pRg-NB-ASI"/>
                             <constraint firstItem="H6F-fa-jDJ" firstAttribute="centerY" secondItem="3qv-TP-OiB" secondAttribute="centerY" id="sEk-FW-ioV"/>
@@ -63,11 +72,16 @@
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
                 <outlet property="containerView" destination="eut-GZ-eug" id="DfR-kg-ZcW"/>
+                <outlet property="imgViewAttentionWidthConstraint" destination="VLH-Ux-fEM" id="FYc-zs-rLL"/>
                 <outlet property="lblTitle" destination="QCO-mG-6VI" id="MCM-KI-5C3"/>
+                <outlet property="lblTitleLeadConstraint" destination="0w0-Qw-TmD" id="s8L-hO-3Yk"/>
                 <outlet property="lblUsage" destination="3qv-TP-OiB" id="15Z-y2-ggu"/>
                 <outlet property="lblValue" destination="H6F-fa-jDJ" id="fNj-je-soV"/>
             </connections>
             <point key="canvasLocation" x="137.68115942028987" y="80.022321428571431"/>
         </tableViewCell>
     </objects>
+    <resources>
+        <image name="ic_warning" width="24" height="24"/>
+    </resources>
 </document>
