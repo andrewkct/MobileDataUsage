@@ -17,27 +17,14 @@ class DetailViewController: UIViewController {
     @IBOutlet private weak var tblDetailHeightConstraint: NSLayoutConstraint!
     
     private let detailTableViewCellId = String(describing: DetailTableViewCell.self)
-    private let detailTableViewCellHeight = 60
+  
+    var detailViewModel: DetailViewModel!
     
     // MARK: - View Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
         
         configureView()
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        
-        UIView.animate(withDuration: 0.3) {
-            self.bgView.alpha = 0.5
-        }
-    }
-    
-    override func viewWillDisappear(_ animated: Bool) {
-        super.viewWillDisappear(animated)
-        
-        bgView.alpha = 0
     }
     
     // MARK: - Configure View
@@ -47,9 +34,11 @@ class DetailViewController: UIViewController {
             
         containerView.layer.cornerRadius = 10.0
         
+        lblTitle.text = detailViewModel.titleText
+        
         tblDetail.backgroundColor = .clear
         tblDetail.isScrollEnabled = false
-        tblDetailHeightConstraint.constant = CGFloat(detailTableViewCellHeight * 4)
+        tblDetailHeightConstraint.constant = CGFloat(detailViewModel.tableViewHeight)
         
         let dvcNib = UINib(nibName: detailTableViewCellId, bundle: nil)
         tblDetail.register(dvcNib, forCellReuseIdentifier: detailTableViewCellId)
@@ -64,7 +53,7 @@ class DetailViewController: UIViewController {
 // MARK: - UITableViewDataSource
 extension DetailViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 4
+        return detailViewModel.numberOfRows()
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -72,8 +61,12 @@ extension DetailViewController: UITableViewDataSource {
             return UITableViewCell()
         }
         
-        cell.selectionStyle = .none
+        if let quarterRecord = detailViewModel.getQuarterRecordAt(index: indexPath.row) {
+            let detailTableViewModel = DetailTableViewModel(quarterRecord)
+            cell.set(viewModel: detailTableViewModel, indexPath: indexPath)
+        }
         
+        cell.selectionStyle = .none
         return cell
     }
 }
@@ -81,6 +74,6 @@ extension DetailViewController: UITableViewDataSource {
 // MARK: - UITableViewDelegate
 extension DetailViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return CGFloat(detailTableViewCellHeight)
+        return CGFloat(detailViewModel.cellHeight)
     }
 }

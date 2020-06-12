@@ -12,13 +12,23 @@ class DetailTableViewCell: UITableViewCell {
     @IBOutlet private weak var lblTitle: UILabel!
     @IBOutlet private weak var lblUsage: UILabel!
     
+    var viewModel: DetailTableViewModel?
+    private var indexPath: IndexPath?
+    
+    func set(viewModel: DetailTableViewModel? = nil,
+             indexPath: IndexPath? = nil) {
+        
+        self.viewModel = viewModel
+        self.indexPath = indexPath
+        
+        if let vm = viewModel {
+            lblTitle.text = vm.quarterTitleText
+            lblUsage.text = vm.valueText
+            lblUsage.textColor = vm.isDecreasing ? .red : .black
+        }
+    }
+    
     override func awakeFromNib() {
         super.awakeFromNib()
-        
-        configureView()
-    }
-
-    private func configureView() {
-        
     }
 }

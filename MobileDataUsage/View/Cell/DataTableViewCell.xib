@@ -18,30 +18,30 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eut-GZ-eug">
-                        <rect key="frame" x="25" y="0.0" width="270" height="83"/>
+                        <rect key="frame" x="25" y="0.0" width="270" height="84"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_warning" translatesAutoresizingMaskIntoConstraints="NO" id="Jcz-2D-7Io">
-                                <rect key="frame" x="10" y="17.5" width="25" height="25"/>
+                                <rect key="frame" x="10" y="18" width="25" height="25"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="25" id="VLH-Ux-fEM"/>
                                     <constraint firstAttribute="width" secondItem="Jcz-2D-7Io" secondAttribute="height" id="xgh-kv-nP2"/>
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QCO-mG-6VI">
-                                <rect key="frame" x="40" y="15" width="220" height="30"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <rect key="frame" x="40" y="15" width="220" height="30.5"/>
+                                <fontDescription key="fontDescription" name="Verdana-Bold" family="Verdana" pointSize="25"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" text="Usage:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3qv-TP-OiB">
-                                <rect key="frame" x="10" y="50" width="48" height="18"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <rect key="frame" x="10" y="50.5" width="58" height="18.5"/>
+                                <fontDescription key="fontDescription" name="Verdana-Bold" family="Verdana" pointSize="15"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Value" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="H6F-fa-jDJ">
-                                <rect key="frame" x="63" y="50" width="38" height="18"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <rect key="frame" x="73" y="50.5" width="41.5" height="18.5"/>
+                                <fontDescription key="fontDescription" name="Verdana" family="Verdana" pointSize="15"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -72,6 +72,7 @@
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
                 <outlet property="containerView" destination="eut-GZ-eug" id="DfR-kg-ZcW"/>
+                <outlet property="imgViewAttention" destination="Jcz-2D-7Io" id="8fH-G9-MTa"/>
                 <outlet property="imgViewAttentionWidthConstraint" destination="VLH-Ux-fEM" id="FYc-zs-rLL"/>
                 <outlet property="lblTitle" destination="QCO-mG-6VI" id="MCM-KI-5C3"/>
                 <outlet property="lblTitleLeadConstraint" destination="0w0-Qw-TmD" id="s8L-hO-3Yk"/>

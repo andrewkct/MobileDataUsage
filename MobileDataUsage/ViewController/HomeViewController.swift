@@ -13,12 +13,20 @@ class HomeViewController: UIViewController {
     @IBOutlet private weak var tblDataUsage: UITableView!
     
     private let dataTableViewCellId = String(describing: DataTableViewCell.self)
+    private var homeViewModel: HomeViewModel!
     
     // MARK: - View Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
         
         configureView()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        homeViewModel = HomeViewModel(self)
+        homeViewModel.fetchYearlyMobileDataUsage()
     }
     
     // MARK: - Configure View
@@ -33,7 +41,7 @@ class HomeViewController: UIViewController {
 // MARK: - UITableViewDataSource
 extension HomeViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 5
+        return homeViewModel.numberOfRows()
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -41,20 +49,45 @@ extension HomeViewController: UITableViewDataSource {
             return UITableViewCell()
         }
         
-        cell.selectionStyle = .none
+        if let yearRecord = homeViewModel.getYearRecordAt(index: indexPath.row) {
+            let dataTableViewModel = DataTableViewModel(yearRecord)
+            cell.set(self, viewModel: dataTableViewModel, indexPath: indexPath)
+        }
         
+        cell.selectionStyle = .none
         return cell
     }
 }
 
-// MARK: - UITableViewDelegate
-extension HomeViewController: UITableViewDelegate {
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+// MARK: - HomeViewModelDelegate
+extension HomeViewController: HomeViewModelDelegate {
+    func onLoading(_ isLoading: Bool) {
         
-        if let vc = storyboard?.instantiateViewController(withIdentifier: String(describing: DetailViewController.self)) as? DetailViewController {
+    }
+    
+    func didGetMobileDataUsage() {
+        self.tblDataUsage.reloadData()
+    }
+    
+    func didGetMobileDataUsageWith(error: String) {
+        self.showAlert(message: error, actionCompletion: {
+            self.homeViewModel.fetchYearlyMobileDataUsage()
+        })
+    }
+}
+
+// MARK: - DataTableViewCellDelegate
+extension HomeViewController: DataTableViewCellDelegate {
+    func didTappedOnAttentionAt(indexPath: IndexPath) {
+        let vc = storyboard?.instantiateViewController(withIdentifier: String(describing: DetailViewController.self)) as! DetailViewController
             
-            vc.modalPresentationStyle = .overCurrentContext
-            present(vc, animated: true, completion: nil)
+        if let yearRecord = homeViewModel.getYearRecordAt(index: indexPath.row) {
+            let detailViewModel = DetailViewModel(yearRecord)
+            vc.detailViewModel = detailViewModel
         }
+            
+        vc.modalPresentationStyle = .overCurrentContext
+        vc.modalTransitionStyle = .crossDissolvep
+        present(vc, animated: true, completion: nil)
     }
 }

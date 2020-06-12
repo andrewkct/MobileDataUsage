@@ -6,7 +6,6 @@
 //  Copyright © 2020 Andrew Khoo. All rights reserved.
 //
 
-import Foundation
 import UIKit
 
 extension CALayer {
