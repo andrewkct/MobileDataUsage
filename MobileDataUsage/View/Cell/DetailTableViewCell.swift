@@ -24,7 +24,10 @@ class DetailTableViewCell: UITableViewCell {
         if let vm = viewModel {
             lblTitle.text = vm.quarterTitleText
             lblUsage.text = vm.valueText
-            lblUsage.textColor = vm.isDecreasing ? .red : .black
+            
+            if vm.isDecreasing {
+                lblUsage.textColor = .red
+            }
         }
     }
     
