@@ -6,6 +6,7 @@ target 'MobileDataUsage' do
   use_frameworks!
 
   # Pods for MobileDataUsage
+  pod 'RealmSwift'
 
   target 'MobileDataUsageTests' do
     inherit! :search_paths

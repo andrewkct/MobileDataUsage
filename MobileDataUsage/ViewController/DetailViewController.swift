@@ -36,12 +36,11 @@ class DetailViewController: UIViewController {
         
         lblTitle.text = detailViewModel.titleText
         
+        let dvcNib = UINib(nibName: detailTableViewCellId, bundle: nil)
+        tblDetail.register(dvcNib, forCellReuseIdentifier: detailTableViewCellId)
         tblDetail.backgroundColor = .clear
         tblDetail.isScrollEnabled = false
         tblDetailHeightConstraint.constant = CGFloat(detailViewModel.tableViewHeight)
-        
-        let dvcNib = UINib(nibName: detailTableViewCellId, bundle: nil)
-        tblDetail.register(dvcNib, forCellReuseIdentifier: detailTableViewCellId)
     }
     
     // MARK: - Actions

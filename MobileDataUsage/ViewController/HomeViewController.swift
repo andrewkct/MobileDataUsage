@@ -11,6 +11,7 @@ import UIKit
 class HomeViewController: UIViewController {
     @IBOutlet private weak var lblTitle: UILabel!
     @IBOutlet private weak var tblDataUsage: UITableView!
+    private let refreshControl = UIRefreshControl()
     
     private let dataTableViewCellId = String(describing: DataTableViewCell.self)
     private var homeViewModel: HomeViewModel!
@@ -26,15 +27,23 @@ class HomeViewController: UIViewController {
         super.viewWillAppear(animated)
         
         homeViewModel = HomeViewModel(self)
-        homeViewModel.fetchYearlyMobileDataUsage()
+        refreshAction()
     }
     
     // MARK: - Configure View
     private func configureView() {
-        tblDataUsage.backgroundColor = .clear
+        refreshControl.addTarget(self, action: #selector(refreshAction(sender:)), for: .valueChanged)
         
         let dtvcNib = UINib(nibName: dataTableViewCellId, bundle: nil)
         tblDataUsage.register(dtvcNib, forCellReuseIdentifier: dataTableViewCellId)
+        tblDataUsage.backgroundColor = .clear
+        tblDataUsage.refreshControl = refreshControl
+    }
+    
+    // MARK: - Actions
+    @objc private func refreshAction(sender: Any? = nil) {
+        refreshControl.beginRefreshing()
+        homeViewModel.fetchYearlyMobileDataUsage()
     }
 }
 
@@ -62,7 +71,9 @@ extension HomeViewController: UITableViewDataSource {
 // MARK: - HomeViewModelDelegate
 extension HomeViewController: HomeViewModelDelegate {
     func onLoading(_ isLoading: Bool) {
-        
+        if !isLoading {
+            refreshControl.endRefreshing()
+        }
     }
     
     func didGetMobileDataUsage() {

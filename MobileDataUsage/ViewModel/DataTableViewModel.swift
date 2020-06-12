@@ -9,7 +9,7 @@
 import Foundation
 
 class DataTableViewModel {
-    let usageTitleText: String = "Usage:"
+    let usageTitleText: String = "Total usage:"
     
     private(set) var titleText: String = ""
     private(set) var valueText: String = ""

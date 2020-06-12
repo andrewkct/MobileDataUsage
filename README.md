@@ -8,3 +8,6 @@ The API used in the app is from data.gov.sg.
 
 # Language
 - Swift 5
+
+# Library
+- RealmSwift

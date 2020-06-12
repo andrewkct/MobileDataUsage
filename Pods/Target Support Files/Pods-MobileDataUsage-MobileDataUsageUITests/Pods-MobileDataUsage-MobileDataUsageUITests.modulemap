@@ -1,0 +1,6 @@
+framework module Pods_MobileDataUsage_MobileDataUsageUITests {
+  umbrella header "Pods-MobileDataUsage-MobileDataUsageUITests-umbrella.h"
+
+  export *
+  module * { export * }
+}

@@ -98,7 +98,7 @@ class HomeViewModel {
                     counter = 0
                     total_usage = 0
                     previous_usage = 0
-                    isYearHadADecreasingUsage = false
+                    isYearHasADecreasingUsage = false
                     quarterRecords = []
                 }
             }
