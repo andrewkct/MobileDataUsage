@@ -73,7 +73,7 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="singleLineEtched" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="bGs-PL-S7C">
+                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="bGs-PL-S7C">
                                         <rect key="frame" x="0.0" y="47" width="248" height="100"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                         <constraints>
@@ -110,12 +110,12 @@
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
+                            <constraint firstAttribute="topMargin" secondItem="jPg-z0-t1z" secondAttribute="top" constant="44" id="3Qd-cv-E9C"/>
                             <constraint firstItem="HKD-OL-Npt" firstAttribute="centerX" secondItem="OjW-RB-q27" secondAttribute="centerX" id="3rd-8Y-hAo"/>
                             <constraint firstItem="HKD-OL-Npt" firstAttribute="width" secondItem="sUG-5G-5rs" secondAttribute="width" multiplier="0.6" id="C9n-uX-uoR"/>
                             <constraint firstItem="HKD-OL-Npt" firstAttribute="centerY" secondItem="OjW-RB-q27" secondAttribute="centerY" id="E7f-5G-YQ4"/>
                             <constraint firstItem="DCy-Xp-Eis" firstAttribute="centerX" secondItem="HKD-OL-Npt" secondAttribute="centerX" id="Jxb-06-Bde"/>
                             <constraint firstItem="jPg-z0-t1z" firstAttribute="leading" secondItem="OjW-RB-q27" secondAttribute="leading" id="Lud-Ti-Msp"/>
-                            <constraint firstAttribute="topMargin" secondItem="jPg-z0-t1z" secondAttribute="top" constant="44" id="NIY-EC-LmV"/>
                             <constraint firstItem="OjW-RB-q27" firstAttribute="trailing" secondItem="jPg-z0-t1z" secondAttribute="trailing" id="PKC-I2-hjh"/>
                             <constraint firstItem="jPg-z0-t1z" firstAttribute="height" secondItem="sUG-5G-5rs" secondAttribute="height" id="dwS-8R-Z1q"/>
                             <constraint firstItem="DCy-Xp-Eis" firstAttribute="top" secondItem="HKD-OL-Npt" secondAttribute="bottom" constant="5" id="noH-aR-OFg"/>

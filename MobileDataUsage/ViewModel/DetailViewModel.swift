@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import RealmSwift
 
 class DetailViewModel {
     private(set) var titleText: String = ""
@@ -14,7 +15,7 @@ class DetailViewModel {
     private(set) var tableViewHeight = 100
     
     private var yearRecord: YearRecord
-    private var quarterRecords = [QuarterRecord]()
+    private var quarterRecords = List<QuarterRecord>()
     
     init(_ yearRecord: YearRecord) {
         self.yearRecord = yearRecord

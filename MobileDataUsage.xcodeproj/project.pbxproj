@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -25,6 +25,7 @@
 		3CBB01E82493479E007CAA97 /* DetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CBB01E72493479E007CAA97 /* DetailViewModel.swift */; };
 		3CBB0202249364D6007CAA97 /* MobileDataUsageUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CBB0201249364D6007CAA97 /* MobileDataUsageUITests.swift */; };
 		3CBB02202493653A007CAA97 /* MobileDataUsageTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CBB021F2493653A007CAA97 /* MobileDataUsageTests.swift */; };
+		3CE67CC42493677900FC3304 /* RealmManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CE67CC32493677900FC3304 /* RealmManager.swift */; };
 		3CE694D7249271C50077BA4D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CE694D6249271C50077BA4D /* AppDelegate.swift */; };
 		3CE694D9249271C50077BA4D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CE694D8249271C50077BA4D /* SceneDelegate.swift */; };
 		3CE694DE249271C50077BA4D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3CE694DC249271C50077BA4D /* Main.storyboard */; };
@@ -82,6 +83,7 @@
 		3CBB021D2493653A007CAA97 /* MobileDataUsageTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MobileDataUsageTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3CBB021F2493653A007CAA97 /* MobileDataUsageTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MobileDataUsageTests.swift; sourceTree = "<group>"; };
 		3CBB02212493653A007CAA97 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3CE67CC32493677900FC3304 /* RealmManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmManager.swift; sourceTree = "<group>"; };
 		3CE694D3249271C50077BA4D /* MobileDataUsage.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MobileDataUsage.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3CE694D6249271C50077BA4D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3CE694D8249271C50077BA4D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -153,7 +155,6 @@
 				62D067D0CF8DDD672244B08A /* Pods-MobileDataUsageTests.debug.xcconfig */,
 				2B5F4494FBFD8DF1FD052A29 /* Pods-MobileDataUsageTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -181,6 +182,14 @@
 				3CBB02212493653A007CAA97 /* Info.plist */,
 			);
 			path = MobileDataUsageTests;
+			sourceTree = "<group>";
+		};
+		3CE67CC2249366DD00FC3304 /* Manager */ = {
+			isa = PBXGroup;
+			children = (
+				3CE67CC32493677900FC3304 /* RealmManager.swift */,
+			);
+			path = Manager;
 			sourceTree = "<group>";
 		};
 		3CE694CA249271C50077BA4D = {
@@ -211,6 +220,7 @@
 				3CE694ED2492724F0077BA4D /* Network */,
 				3CBB01CE2492A013007CAA97 /* WebService */,
 				3CE694EC2492724A0077BA4D /* Model */,
+				3CE67CC2249366DD00FC3304 /* Manager */,
 				3CE694EE249272590077BA4D /* Shared */,
 				3CE694EF2492725E0077BA4D /* Util */,
 				3CE694F4249273B50077BA4D /* View */,
@@ -574,6 +584,7 @@
 				3CBB01C924929FB5007CAA97 /* MobileDataUsage.swift in Sources */,
 				3CBB01E024931E7D007CAA97 /* YearRecord.swift in Sources */,
 				3CBB01C524929F6B007CAA97 /* NetworkManager.swift in Sources */,
+				3CE67CC42493677900FC3304 /* RealmManager.swift in Sources */,
 				3CE694D7249271C50077BA4D /* AppDelegate.swift in Sources */,
 				3CE694D9249271C50077BA4D /* SceneDelegate.swift in Sources */,
 				3CE6950124928DEA0077BA4D /* DetailTableViewCell.swift in Sources */,
@@ -839,7 +850,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.korvac.MobileDataUsage;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -857,7 +868,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.korvac.MobileDataUsage;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

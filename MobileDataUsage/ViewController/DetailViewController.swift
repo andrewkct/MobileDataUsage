@@ -33,6 +33,7 @@ class DetailViewController: UIViewController {
         view.backgroundColor = .clear
             
         containerView.layer.cornerRadius = 10.0
+        bgView.translatesAutoresizingMaskIntoConstraints = false
         
         lblTitle.text = detailViewModel.titleText
         

@@ -17,11 +17,18 @@ class HomeViewModel {
     weak var delegate: HomeViewModelDelegate?
     
     private let mobileDataUsageService: MobileDataUsageService!
+    private let realmManager: RealmManager!
     private var yearRecords = [YearRecord]()
     
     init(_ delegate: HomeViewModelDelegate? = nil) {
         self.delegate = delegate
         self.mobileDataUsageService = MobileDataUsageService()
+        self.realmManager = RealmManager()
+        
+        let localYearRecords = realmManager.getYearRecordsFromRealm()
+        if localYearRecords.count > 0 {
+            self.yearRecords = localYearRecords
+        }
     }
     
     func fetchYearlyMobileDataUsage() {
@@ -31,6 +38,11 @@ class HomeViewModel {
             
             let mobileDataUsageRecords = mobileDataUsage.result.records
             self?.yearRecords = HomeViewModel.filterIntoYearly(records: mobileDataUsageRecords)
+            
+            // Save to database
+            if let yearRecords = self?.yearRecords {
+                self?.realmManager.addYearRecordToRealm(yearRecords)
+            }
             
             self?.delegate?.onLoading(false)
             self?.delegate?.didGetMobileDataUsage()
@@ -69,7 +81,8 @@ class HomeViewModel {
             if year >= startDate && year <= endDate {
                 counter += 1
                 
-                var quarterRecord = QuarterRecord()
+                let quarterRecord = QuarterRecord()
+                quarterRecord.id = quarter
                 quarterRecord.title = quarterTitle
                 quarterRecord.usage = usage
               
@@ -86,11 +99,11 @@ class HomeViewModel {
                 total_usage += usage
                 
                 if counter == total_quarter { // Reach all quarters
-                    var yearRecord = YearRecord()
+                    let yearRecord = YearRecord()
                     yearRecord.title = year
                     yearRecord.total_usage = total_usage
                     yearRecord.isDecreasing = isYearHasADecreasingUsage
-                    yearRecord.quarterRecords = quarterRecords
+                    yearRecord.quarterRecords.append(objectsIn: quarterRecords)
                     
                     yearRecords.append(yearRecord)
                     
