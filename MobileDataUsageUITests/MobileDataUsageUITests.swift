@@ -21,6 +21,7 @@ class MobileDataUsageUITests: XCTestCase {
         continueAfterFailure = false
 
         // In UI tests it’s important to set the initial state - such as interface orientation - required for your tests before they run. The setUp method is a good place to do this.
+        app.launchArguments.append("---uitesting")
     }
 
     override func tearDown() {
@@ -28,7 +29,7 @@ class MobileDataUsageUITests: XCTestCase {
         app = nil
     }
     
-    func testHomeView() {
+    func testHomeAndDetailViews() {
         app.launch()
         XCTAssertTrue(app.isDisplayingHomeView)
         
@@ -41,27 +42,18 @@ class MobileDataUsageUITests: XCTestCase {
         for i in 0 ..< totalCells {
             let dutvCell = dutv.cells["DataTableViewCell_\(i)"]
             XCTAssertTrue(dutvCell.exists)
+            
+            let imgView = dutvCell.images["AttentionImageView"]
+            
+            if imgView.exists {
+                imgView.tap()
+                
+                XCTAssertTrue(app.isDisplayingDetailView)
+
+                let closeBtn = app.buttons["CloseButton"]
+                closeBtn.tap()
+            }
         }
-    }
-    
-    func testTapOnAttention() {
-        app.launch()
-        XCTAssertTrue(app.isDisplayingHomeView)
-
-        let dutv = app.tables["DataUsageTableView"]
-        XCTAssertTrue(dutv.exists)
-
-        let dutvCell = dutv.cells["DataTableViewCell_3"]
-        XCTAssertTrue(dutvCell.exists)
-
-        let imgView = dutvCell.images["AttentionImageView"]
-        XCTAssertTrue(imgView.exists)
-        imgView.tap()
-        
-        XCTAssertTrue(app.isDisplayingDetailView)
-
-        let closeBtn = app.buttons["CloseButton"]
-        closeBtn.tap()
     }
 }
 
