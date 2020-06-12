@@ -11,6 +11,7 @@ import RealmSwift
 
 class DetailViewModel {
     private(set) var titleText: String = ""
+    private(set) var totalUsageText: String = ""
     private(set) var cellHeight = 60
     private(set) var tableViewHeight = 100
     
@@ -21,6 +22,7 @@ class DetailViewModel {
         self.yearRecord = yearRecord
         
         titleText = self.yearRecord.title
+        totalUsageText = String(self.yearRecord.total_usage)
         
         quarterRecords = self.yearRecord.quarterRecords
         tableViewHeight = cellHeight * quarterRecords.count

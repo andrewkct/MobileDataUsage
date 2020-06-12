@@ -32,12 +32,15 @@ class HomeViewController: UIViewController {
     
     // MARK: - Configure View
     private func configureView() {
+        view.accessibilityIdentifier = "HomeView"
+        
         refreshControl.addTarget(self, action: #selector(refreshAction(sender:)), for: .valueChanged)
         
         let dtvcNib = UINib(nibName: dataTableViewCellId, bundle: nil)
         tblDataUsage.register(dtvcNib, forCellReuseIdentifier: dataTableViewCellId)
         tblDataUsage.backgroundColor = .clear
         tblDataUsage.refreshControl = refreshControl
+        tblDataUsage.accessibilityIdentifier = "DataUsageTableView"
     }
     
     // MARK: - Actions
@@ -64,6 +67,7 @@ extension HomeViewController: UITableViewDataSource {
         }
         
         cell.selectionStyle = .none
+        cell.accessibilityIdentifier = "DataTableViewCell_\(indexPath.row)"
         return cell
     }
 }

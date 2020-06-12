@@ -65,7 +65,7 @@
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HKD-OL-Npt">
-                                <rect key="frame" x="83" y="372" width="248" height="162"/>
+                                <rect key="frame" x="83" y="358" width="248" height="190.5"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gex-4H-3TP">
                                         <rect key="frame" x="15" y="15" width="218" height="32"/>
@@ -84,20 +84,29 @@
                                             <outlet property="delegate" destination="ExR-54-Nbo" id="vC9-BM-ItC"/>
                                         </connections>
                                     </tableView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Total" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tnd-pt-wcx">
+                                        <rect key="frame" x="190" y="157" width="43" height="18.5"/>
+                                        <fontDescription key="fontDescription" name="Verdana-Bold" family="Verdana" pointSize="15"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <constraints>
                                     <constraint firstItem="Gex-4H-3TP" firstAttribute="top" secondItem="HKD-OL-Npt" secondAttribute="top" constant="15" id="2Ru-B6-DJy"/>
                                     <constraint firstItem="Gex-4H-3TP" firstAttribute="leading" secondItem="HKD-OL-Npt" secondAttribute="leading" constant="15" id="3nh-iv-wIg"/>
-                                    <constraint firstAttribute="bottom" secondItem="bGs-PL-S7C" secondAttribute="bottom" constant="15" id="R6o-mN-zgd"/>
+                                    <constraint firstAttribute="bottom" secondItem="tnd-pt-wcx" secondAttribute="bottom" constant="15" id="DO7-Yo-8I2"/>
+                                    <constraint firstItem="tnd-pt-wcx" firstAttribute="top" secondItem="bGs-PL-S7C" secondAttribute="bottom" constant="10" id="Kxa-S1-hE0"/>
+                                    <constraint firstAttribute="trailing" secondItem="tnd-pt-wcx" secondAttribute="trailing" constant="15" id="N9p-0V-ufc"/>
                                     <constraint firstItem="bGs-PL-S7C" firstAttribute="top" secondItem="Gex-4H-3TP" secondAttribute="bottom" id="gMW-hL-glc"/>
+                                    <constraint firstItem="tnd-pt-wcx" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="HKD-OL-Npt" secondAttribute="leading" constant="15" id="keZ-up-zIi"/>
                                     <constraint firstAttribute="trailing" secondItem="bGs-PL-S7C" secondAttribute="trailing" id="pmO-Wb-dQh"/>
                                     <constraint firstItem="bGs-PL-S7C" firstAttribute="leading" secondItem="HKD-OL-Npt" secondAttribute="leading" id="puM-vy-AHK"/>
                                     <constraint firstAttribute="trailing" secondItem="Gex-4H-3TP" secondAttribute="trailing" constant="15" id="zxs-j9-VTQ"/>
                                 </constraints>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DCy-Xp-Eis">
-                                <rect key="frame" x="172" y="539" width="70" height="70"/>
+                                <rect key="frame" x="172" y="553.5" width="70" height="70"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="70" id="G1y-H9-iuJ"/>
                                     <constraint firstAttribute="width" secondItem="DCy-Xp-Eis" secondAttribute="height" id="eBN-CI-TMP"/>
@@ -124,8 +133,10 @@
                     </view>
                     <connections>
                         <outlet property="bgView" destination="jPg-z0-t1z" id="tzt-UV-AdE"/>
+                        <outlet property="btnClose" destination="DCy-Xp-Eis" id="loT-z1-Uwu"/>
                         <outlet property="containerView" destination="HKD-OL-Npt" id="rmb-w5-Pv7"/>
                         <outlet property="lblTitle" destination="Gex-4H-3TP" id="BgJ-D0-GLb"/>
+                        <outlet property="lblTotal" destination="tnd-pt-wcx" id="fgy-Vk-ZnK"/>
                         <outlet property="tblDetail" destination="bGs-PL-S7C" id="Euz-SN-bfb"/>
                         <outlet property="tblDetailHeightConstraint" destination="nT3-yp-Try" id="eUx-PT-p4V"/>
                     </connections>

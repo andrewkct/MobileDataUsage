@@ -62,6 +62,8 @@ class DataTableViewCell: UITableViewCell {
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(tapOnAttentionAction(sender:)))
         imgViewAttention.addGestureRecognizer(tapGesture)
         imgViewAttention.isUserInteractionEnabled = true
+        imgViewAttention.accessibilityIdentifier = "AttentionImageView"
+        imgViewAttention.isAccessibilityElement = true
     }
     
     // MARK: - Actions

@@ -63,6 +63,7 @@ class DetailTests: XCTestCase {
     func testDetailViewModel() {
         let vm = DetailViewModel(yearRecord)
         XCTAssertEqual(vm.titleText, "2009")
+        XCTAssertEqual(vm.totalUsageText, String(total_usage))
         XCTAssertEqual(vm.numberOfRows(), 4)
         
         let quarter = vm.getQuarterRecordAt(index: 0)

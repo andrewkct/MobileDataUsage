@@ -13,6 +13,8 @@ class DetailViewController: UIViewController {
     @IBOutlet private weak var containerView: UIView!
     @IBOutlet private weak var lblTitle: UILabel!
     @IBOutlet private weak var tblDetail: UITableView!
+    @IBOutlet private weak var lblTotal: UILabel!
+    @IBOutlet private weak var btnClose: UIButton!
     
     @IBOutlet private weak var tblDetailHeightConstraint: NSLayoutConstraint!
     
@@ -31,17 +33,21 @@ class DetailViewController: UIViewController {
     private func configureView() {
         view.isOpaque = false
         view.backgroundColor = .clear
+        view.accessibilityIdentifier = "DetailView"
             
         containerView.layer.cornerRadius = 10.0
         bgView.translatesAutoresizingMaskIntoConstraints = false
         
         lblTitle.text = detailViewModel.titleText
+        lblTotal.text = detailViewModel.totalUsageText
         
         let dvcNib = UINib(nibName: detailTableViewCellId, bundle: nil)
         tblDetail.register(dvcNib, forCellReuseIdentifier: detailTableViewCellId)
         tblDetail.backgroundColor = .clear
         tblDetail.isScrollEnabled = false
         tblDetailHeightConstraint.constant = CGFloat(detailViewModel.tableViewHeight)
+        
+        btnClose.accessibilityIdentifier = "CloseButton"
     }
     
     // MARK: - Actions
