@@ -13,8 +13,8 @@ class DataTableViewModel {
     
     private(set) var titleText: String = ""
     private(set) var valueText: String = ""
-    
     private(set) var isDecreasing = false
+    
     private(set) var imageWidthConstant = 0
     private(set) var titleLeadConstant = 5
     

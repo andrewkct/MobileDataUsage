@@ -74,7 +74,23 @@ class HomeTests: XCTestCase {
         XCTAssertEqual(isDecreasing, true)
     }
     
-    
+    func testDataTableViewModel() {
+        let records = self.getYearRecords()
+        XCTAssertNotNil(records)
+        
+        yearRecords = homeViewModel.filterIntoYearly(records: records, startDate: "2018", endDate: "2018")
+        XCTAssertEqual(yearRecords.count, 1)
+        
+        let yearRecord = yearRecords.first
+        let title = yearRecord?.title ?? ""
+        let total_usage = yearRecord?.total_usage ?? 0
+        let isDecreasing = yearRecord?.isDecreasing ?? false
+        
+        let vm = DataTableViewModel(yearRecord!)
+        XCTAssertEqual(vm.titleText, title)
+        XCTAssertEqual(vm.valueText, String(total_usage))
+        XCTAssertEqual(vm.isDecreasing, isDecreasing)
+    }
 }
 
 // MARK: - HomeViewModelDelegate
@@ -86,8 +102,8 @@ extension HomeTests: HomeViewModelDelegate {
 extension HomeTests {
     func getYearRecords() -> [MobileDataUsageRecord] {
         let sample_filename = "sample_data"
-        let jsonData = readJson(resourceName: sample_filename)
-        let mobileDataUsage = parse(jsonData: jsonData)
+        let data = readJson(resourceName: sample_filename)
+        let mobileDataUsage = parse(data: data)
         let records = mobileDataUsage?.result.records
         return records!
     }
@@ -95,6 +111,7 @@ extension HomeTests {
     func readJson(resourceName: String) -> Data {
         let bundle = Bundle(for: HomeTests.self)
         guard let path = bundle.path(forResource: resourceName, ofType: "json") else {
+            XCTFail("Can't find resource file")
             return Data()
         }
         
@@ -102,13 +119,15 @@ extension HomeTests {
             let data = try Data(contentsOf: URL(fileURLWithPath: path), options: .mappedIfSafe)
             return data
             
-        } catch {
+        } catch let error{
+            XCTFail("Unexpected error of getting data from resource file \(error)")
             return Data()
         }
     }
 
-    func parse(jsonData: Data?) -> MobileDataUsage? {
-        guard let data = jsonData else {
+    func parse(data: Data?) -> MobileDataUsage? {
+        guard let data = data else {
+            XCTFail("No data to parse")
             return nil
         }
         
@@ -118,6 +137,7 @@ extension HomeTests {
             return models
         
         } catch  {
+            XCTFail("Error decoding data")
             return nil
         }
     }
