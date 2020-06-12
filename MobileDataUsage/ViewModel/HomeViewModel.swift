@@ -37,7 +37,7 @@ class HomeViewModel {
         mobileDataUsageService.getMobileDataUsage(onSuccess: { [weak self] (mobileDataUsage: MobileDataUsage) in
             
             let mobileDataUsageRecords = mobileDataUsage.result.records
-            self?.yearRecords = HomeViewModel.filterIntoYearly(records: mobileDataUsageRecords)
+            self?.yearRecords = self!.filterIntoYearly(records: mobileDataUsageRecords)
             
             // Save to database
             if let yearRecords = self?.yearRecords {
@@ -54,7 +54,7 @@ class HomeViewModel {
     }
     
     // MARK: - Filter records into yearly
-    static func filterIntoYearly(records: [MobileDataUsageRecord], startDate: String = "2008", endDate: String = "2018") -> [YearRecord] {
+    func filterIntoYearly(records: [MobileDataUsageRecord], startDate: String = "2008", endDate: String = "2018") -> [YearRecord] {
         
         guard records.count > 0 else {
             return []
@@ -65,7 +65,7 @@ class HomeViewModel {
         let total_quarter = 4
         var total_usage: Float = 0.0
         var previous_usage: Float = 0.0
-        var isDecreasing = false
+        var isUsageDecreasing = false
         var isYearHasADecreasingUsage = false
         var counter = 0
         
@@ -86,14 +86,14 @@ class HomeViewModel {
                 quarterRecord.title = quarterTitle
                 quarterRecord.usage = usage
               
-                isDecreasing = previous_usage > usage
-                quarterRecord.isDecreasing = isDecreasing
-                
-                if isDecreasing {
-                    isYearHasADecreasingUsage = isDecreasing
-                }
+                isUsageDecreasing = previous_usage > usage
+                quarterRecord.isDecreasing = isUsageDecreasing
                 
                 quarterRecords.append(quarterRecord)
+                
+                if isUsageDecreasing {
+                    isYearHasADecreasingUsage = isUsageDecreasing
+                }
                 
                 previous_usage = usage
                 total_usage += usage

@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		13267DEA47993FED818816AD /* Pods_MobileDataUsageTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8EEE8D7F8C980FC767E80050 /* Pods_MobileDataUsageTests.framework */; };
+		3C3F198D2493C4F400779453 /* RealmTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C3F198C2493C4F400779453 /* RealmTests.swift */; };
 		3CBB01C324929F11007CAA97 /* AppConstant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CBB01C224929F11007CAA97 /* AppConstant.swift */; };
 		3CBB01C524929F6B007CAA97 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CBB01C424929F6B007CAA97 /* NetworkManager.swift */; };
 		3CBB01C724929F8C007CAA97 /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CBB01C624929F8C007CAA97 /* Request.swift */; };
@@ -24,8 +25,9 @@
 		3CBB01E624934702007CAA97 /* DetailTableViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CBB01E524934702007CAA97 /* DetailTableViewModel.swift */; };
 		3CBB01E82493479E007CAA97 /* DetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CBB01E72493479E007CAA97 /* DetailViewModel.swift */; };
 		3CBB0202249364D6007CAA97 /* MobileDataUsageUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CBB0201249364D6007CAA97 /* MobileDataUsageUITests.swift */; };
-		3CBB02202493653A007CAA97 /* MobileDataUsageTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CBB021F2493653A007CAA97 /* MobileDataUsageTests.swift */; };
 		3CE67CC42493677900FC3304 /* RealmManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CE67CC32493677900FC3304 /* RealmManager.swift */; };
+		3CE67CCB2493A5DA00FC3304 /* sample_data.json in Resources */ = {isa = PBXBuildFile; fileRef = 3CE67CC92493A5C800FC3304 /* sample_data.json */; };
+		3CE67CCD2493A5EF00FC3304 /* HomeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CE67CCC2493A5EF00FC3304 /* HomeTests.swift */; };
 		3CE694D7249271C50077BA4D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CE694D6249271C50077BA4D /* AppDelegate.swift */; };
 		3CE694D9249271C50077BA4D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CE694D8249271C50077BA4D /* SceneDelegate.swift */; };
 		3CE694DE249271C50077BA4D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3CE694DC249271C50077BA4D /* Main.storyboard */; };
@@ -62,6 +64,7 @@
 /* Begin PBXFileReference section */
 		11B49154D4486150E85409EE /* Pods-MobileDataUsage-MobileDataUsageUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MobileDataUsage-MobileDataUsageUITests.release.xcconfig"; path = "Target Support Files/Pods-MobileDataUsage-MobileDataUsageUITests/Pods-MobileDataUsage-MobileDataUsageUITests.release.xcconfig"; sourceTree = "<group>"; };
 		2B5F4494FBFD8DF1FD052A29 /* Pods-MobileDataUsageTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MobileDataUsageTests.release.xcconfig"; path = "Target Support Files/Pods-MobileDataUsageTests/Pods-MobileDataUsageTests.release.xcconfig"; sourceTree = "<group>"; };
+		3C3F198C2493C4F400779453 /* RealmTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmTests.swift; sourceTree = "<group>"; };
 		3CBB01C224929F11007CAA97 /* AppConstant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConstant.swift; sourceTree = "<group>"; };
 		3CBB01C424929F6B007CAA97 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		3CBB01C624929F8C007CAA97 /* Request.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Request.swift; sourceTree = "<group>"; };
@@ -81,9 +84,10 @@
 		3CBB0201249364D6007CAA97 /* MobileDataUsageUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MobileDataUsageUITests.swift; sourceTree = "<group>"; };
 		3CBB0203249364D6007CAA97 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3CBB021D2493653A007CAA97 /* MobileDataUsageTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MobileDataUsageTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		3CBB021F2493653A007CAA97 /* MobileDataUsageTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MobileDataUsageTests.swift; sourceTree = "<group>"; };
 		3CBB02212493653A007CAA97 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3CE67CC32493677900FC3304 /* RealmManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmManager.swift; sourceTree = "<group>"; };
+		3CE67CC92493A5C800FC3304 /* sample_data.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = sample_data.json; sourceTree = "<group>"; };
+		3CE67CCC2493A5EF00FC3304 /* HomeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTests.swift; sourceTree = "<group>"; };
 		3CE694D3249271C50077BA4D /* MobileDataUsage.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MobileDataUsage.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3CE694D6249271C50077BA4D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3CE694D8249271C50077BA4D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -178,7 +182,9 @@
 		3CBB021E2493653A007CAA97 /* MobileDataUsageTests */ = {
 			isa = PBXGroup;
 			children = (
-				3CBB021F2493653A007CAA97 /* MobileDataUsageTests.swift */,
+				3CE67CC92493A5C800FC3304 /* sample_data.json */,
+				3CE67CCC2493A5EF00FC3304 /* HomeTests.swift */,
+				3C3F198C2493C4F400779453 /* RealmTests.swift */,
 				3CBB02212493653A007CAA97 /* Info.plist */,
 			);
 			path = MobileDataUsageTests;
@@ -399,6 +405,7 @@
 					};
 					3CBB021C2493653A007CAA97 = {
 						CreatedOnToolsVersion = 11.5;
+						LastSwiftMigration = 1150;
 						TestTargetID = 3CE694D2249271C50077BA4D;
 					};
 					3CE694D2249271C50077BA4D = {
@@ -438,6 +445,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3CE67CCB2493A5DA00FC3304 /* sample_data.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -571,7 +579,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3CBB02202493653A007CAA97 /* MobileDataUsageTests.swift in Sources */,
+				3CE67CCD2493A5EF00FC3304 /* HomeTests.swift in Sources */,
+				3C3F198D2493C4F400779453 /* RealmTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -645,8 +654,9 @@
 			baseConfigurationReference = 5CF5CB7FEA3D2FFFC0AE0F61 /* Pods-MobileDataUsage-MobileDataUsageUITests.debug.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = MobileDataUsageUITests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -665,8 +675,9 @@
 			baseConfigurationReference = 11B49154D4486150E85409EE /* Pods-MobileDataUsage-MobileDataUsageUITests.release.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = MobileDataUsageUITests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -685,9 +696,10 @@
 			baseConfigurationReference = 62D067D0CF8DDD672244B08A /* Pods-MobileDataUsageTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = MobileDataUsageTests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -695,6 +707,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.korvac.MobileDataUsageTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MobileDataUsage.app/MobileDataUsage";
@@ -706,9 +719,10 @@
 			baseConfigurationReference = 2B5F4494FBFD8DF1FD052A29 /* Pods-MobileDataUsageTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = MobileDataUsageTests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -772,7 +786,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -826,7 +840,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
