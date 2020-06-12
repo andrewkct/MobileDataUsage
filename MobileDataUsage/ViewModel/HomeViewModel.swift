@@ -54,6 +54,7 @@ class HomeViewModel {
         var total_usage: Float = 0.0
         var previous_usage: Float = 0.0
         var isDecreasing = false
+        var isYearHasADecreasingUsage = false
         var counter = 0
         
         for i in 0 ..< records.count {
@@ -71,9 +72,13 @@ class HomeViewModel {
                 var quarterRecord = QuarterRecord()
                 quarterRecord.title = quarterTitle
                 quarterRecord.usage = usage
-                
+              
                 isDecreasing = previous_usage > usage
                 quarterRecord.isDecreasing = isDecreasing
+                
+                if isDecreasing {
+                    isYearHasADecreasingUsage = isDecreasing
+                }
                 
                 quarterRecords.append(quarterRecord)
                 
@@ -84,7 +89,7 @@ class HomeViewModel {
                     var yearRecord = YearRecord()
                     yearRecord.title = year
                     yearRecord.total_usage = total_usage
-                    yearRecord.isDecreasing = isDecreasing
+                    yearRecord.isDecreasing = isYearHasADecreasingUsage
                     yearRecord.quarterRecords = quarterRecords
                     
                     yearRecords.append(yearRecord)
@@ -93,6 +98,7 @@ class HomeViewModel {
                     counter = 0
                     total_usage = 0
                     previous_usage = 0
+                    isYearHadADecreasingUsage = false
                     quarterRecords = []
                 }
             }

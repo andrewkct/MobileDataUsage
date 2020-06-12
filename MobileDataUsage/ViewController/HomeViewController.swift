@@ -87,7 +87,7 @@ extension HomeViewController: DataTableViewCellDelegate {
         }
             
         vc.modalPresentationStyle = .overCurrentContext
-        vc.modalTransitionStyle = .crossDissolvep
+        vc.modalTransitionStyle = .crossDissolve
         present(vc, animated: true, completion: nil)
     }
 }
